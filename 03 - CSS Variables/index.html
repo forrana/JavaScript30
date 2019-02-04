@@ -23,7 +23,7 @@
   <style>
     :root {
       --base: #ffc600;
-      --spacing: 10px;
+      --spacing: 50px;
       --blur: 10px;
     }
 
@@ -36,7 +36,6 @@
     .hl {
       color: var(--base);
     }
-
     /*
       misc styles, nothing to do with CSS variables
     */
@@ -63,14 +62,16 @@
     const inputs = document.querySelectorAll('.controls input');
 
     function handleUpdate() {
-      const suffix = this.dataset.sizing || '';
+      const suffix = this.dataset.sizing || "";
+      console.log(this.name, this.value, suffix);
       document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+
     }
 
-    inputs.forEach(input => input.addEventListener('change', handleUpdate));
-    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
-  </script>
+    inputs.forEach(input => input.addEventListener("change", handleUpdate));
+    inputs.forEach(input => input.addEventListener("mousemove", handleUpdate));
 
+  </script>
 
 </body>
 </html>
